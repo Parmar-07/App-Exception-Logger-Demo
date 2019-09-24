@@ -38,14 +38,18 @@ public class App extends Application {
 
 ```
 
-- `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` generating a auto-log file 
+- `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` generating a auto-log files with limitations
 path : <b><i>ExternalStorage/Android/data/<package-name>/errorLog/Log_yyyy-MM-dd hh:mm:ss:a.txt</i></b>
 
 
 - `fileLogger.customGenrateLog("/uncaught_logger/","logger.txt")` generating a specific single file as given path
 path : <b><i>ExternalStorage/uncaught_logger/logger.txt</i></b>
 
+# Download
+Download the [@uncaught_logger-release.aar][3] .aar file & implemeted the `app.gradle` file
+
 
  [1]: https://github.com/RohitSurwase/UCE-Handler
  [2]:https://github.com/DineshParmar65412369/App-Exception-Logger-Demo/tree/master/uncaught_logger
+ [3]:https://github.com/DineshParmar65412369/App-Exception-Logger-Demo/raw/master/uncaught_logger/aar/uncaught_logger-release.aar
  
