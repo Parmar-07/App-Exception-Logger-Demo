@@ -49,7 +49,7 @@ public class FileLogger extends AndroidLogger {
             return this;
         }
 
-        public FileLoggerBuilder customGenrateLog(String path, String name) {
+        public FileLoggerBuilder customGenerateLog(String path, String name) {
             filePath = path;
             fileName = name;
             return this;
@@ -194,7 +194,7 @@ public class FileLogger extends AndroidLogger {
             if (fileError != null)
                 fileError.onError(e.getMessage());
             else
-                Log.e("AndroidLoggersssss", "This app does not have write storage permission to save log file.");
+                Log.e("AndroidLogger", "This app does not have write storage permission to save log file.");
             isIOError = true;
         }
 
