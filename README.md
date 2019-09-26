@@ -14,7 +14,7 @@ For logging exceptions in a file need `WRITE_EXTERNAL_STORAGE` permission, to in
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
-In on `onCreate(...)` of the Application class instance, you need to attach loggers in uce builder and call `caught()`
+In `onCreate(...)` of the Application class, you need to attach loggers in uce builder and call `caught()` method
 
 ```java
 
@@ -39,11 +39,11 @@ public class App extends Application {
 
 ```
 
-To produce an auto file logger with using the  `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` method to pass the value of the limitation as a parameter and log file will generate in this path :
+To produce an auto file logger with by using the  `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` method to pass the value of the limitation as a parameter and log file will generate in this path :
 
 <b><i>`ExternalStorage/Android/data/<package-name>/errorLog/Log_yyyy-MM-dd hh:mm:ss:a.txt`</i></b>
 
- To produce a custom file path for single file log using`fileLogger.customGenrateLog("/uncaught_logger/","logger.txt")` method passing the path & filename as a parameters
+ To produce a custom file path for single file log by using`fileLogger.customGenrateLog("/uncaught_logger/","logger.txt")` method passing the path & filename as a parameters
 
 <b><i>`ExternalStorage/uncaught_logger/logger.txt`</i></b>
 
