@@ -1,4 +1,4 @@
-# [App-Exception-Logger-Demo][0]
+# [App-Exception-Logger-Demo.apk][0]
 
 Logging a UncaugthException in a File or Log console.
 
