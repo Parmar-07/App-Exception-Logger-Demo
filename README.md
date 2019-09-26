@@ -2,19 +2,20 @@
 
 Logging a UncaugthException in a File or Log console.
 
-Big Thanks to <b>Mr.Rohit Surwase</b> to having a such a advacned library of [UCE-Handler][1] for reference.
+Big Thanks to Mr.Rohit Surwase for having such an advanced library of UCE-Handler for reference.
 
-Here, with respect to `uce-handler` library, [<b>uncaught_logger</b>][2] contains only <i>console</i> log & <i>file</i> log features
+Here, concerning `uce-handler` library, [<b>uncaught_logger</b>][2] contains only <i>console</i> log & <i>file</i> log features
 
 ## Usage
 
-Need `WRITE_EXTERNAL_STORAGE` permission, <b>FileLogger</b> is invoked
+For logging exceptions in a file need `WRITE_EXTERNAL_STORAGE` permission, to invoke the <b>FileLogger</b> 
 
 ```xml 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
-Invoke the library to use, from `Application` in override the `onCreate(...)` method, we can attach both the logger at a time.
+In on `onCreate(...)` of the Application class instance, you need to attach loggers in uce builder and call `caught()`
+
 ```java
 
 public class App extends Application {
@@ -38,15 +39,40 @@ public class App extends Application {
 
 ```
 
-- `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` generating a auto-log files with limitations
-path : <b><i>ExternalStorage/Android/data/<package-name>/errorLog/Log_yyyy-MM-dd hh:mm:ss:a.txt</i></b>
+To produce an auto file logger with using the  `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` method to pass the value of the limitation as a parameter and log file will generate in this path :
+
+<b><i>`ExternalStorage/Android/data/<package-name>/errorLog/Log_yyyy-MM-dd hh:mm:ss:a.txt`</i></b>
+
+ To produce a custom file path for single file log using`fileLogger.customGenrateLog("/uncaught_logger/","logger.txt")` method passing the path & filename as a parameters
+
+<b><i>`ExternalStorage/uncaught_logger/logger.txt`</i></b>
+
+# Implementation
+Download the [@uncaught_logger-release.aar][3] file and copy to the libs folder, libs folder must be added the `project-level.gradle` file 
+
+```gradle
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+```
+Add @aar file dependancy in `app-level.gradle` file
+
+```gradle
+
+dependencies {
+implementation(name:'uncaught_logger-release', ext:'aar')
+}
+
+```
 
 
-- `fileLogger.customGenrateLog("/uncaught_logger/","logger.txt")` generating a specific single file as given path
-path : <b><i>ExternalStorage/uncaught_logger/logger.txt</i></b>
-
-# Download
-Download the [@uncaught_logger-release.aar][3] .aar file & implemeted the `app.gradle` file
 
 
  [1]: https://github.com/RohitSurwase/UCE-Handler
