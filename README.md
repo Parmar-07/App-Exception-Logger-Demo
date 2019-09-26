@@ -11,7 +11,7 @@ Here, concerning `uce-handler` library, [<b>uncaught_logger</b>][2] contains onl
 For logging exceptions in a file need `WRITE_EXTERNAL_STORAGE` permission, to invoke the <b>FileLogger</b> 
 
 ```xml 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 ```
 
 In on `onCreate(...)` of the Application class instance, you need to attach loggers in uce builder and call `caught()`
