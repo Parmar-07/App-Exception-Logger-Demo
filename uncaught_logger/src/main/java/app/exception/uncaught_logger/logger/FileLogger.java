@@ -136,7 +136,7 @@ public class FileLogger extends AndroidLogger {
             if (builder.maxLogFile != 0) {
                 int files = Objects.requireNonNull(dirs.listFiles()).length;
 
-                if (files > builder.maxLogFile) {
+                if (files >= builder.maxLogFile) {
                     deleteRecursive(dirs);
                     createDirs(paths);
                 }
