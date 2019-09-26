@@ -48,7 +48,7 @@ To produce an auto file logger with using the  `fileLogger.autoGenerateLog(FileL
 <b><i>`ExternalStorage/uncaught_logger/logger.txt`</i></b>
 
 # Implementation
-Download the [@uncaught_logger-release.aar][3] file and copy to the libs folder, libs folder must be added the `project-level.gradle` file 
+Download the [@uncaught_logger-release.aar][3] file and copy to the libs folder, libs folder must be added to `project-level.gradle` file 
 
 ```gradle
 allprojects {
