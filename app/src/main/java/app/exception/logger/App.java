@@ -15,7 +15,6 @@ public class App extends Application {
         ConsoleLogger consoleLogger = ConsoleLogger.invoke("ConsoleLogger", ConsoleLogger.DEDUG);
         FileLogger fileLogger = new FileLogger.FileLoggerBuilder()
                 .autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)
-                .isHidden()
                 .build(this.getPackageName());
 
         UCE.builder(this)
