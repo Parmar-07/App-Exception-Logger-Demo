@@ -152,8 +152,6 @@ public class FileLogger extends AndroidLogger {
             builder.filePath = File.separator
                     + "Android/uncaught_logger/apps/"
                     + builder.packageName
-                    + File.separator
-                    + "errorLog"
                     + File.separator;
         } else {
             builder.filePath = dirs;
