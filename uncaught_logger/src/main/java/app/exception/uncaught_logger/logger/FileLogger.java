@@ -32,6 +32,7 @@ public class FileLogger extends AndroidLogger {
         private String filePath = "";
         private String fileName;
         private String packageName;
+        private boolean isHidden = false;
 
         public FileLoggerBuilder() {
             if (_logger != null) {
@@ -52,6 +53,11 @@ public class FileLogger extends AndroidLogger {
         public FileLoggerBuilder customGenerateLog(String path, String name) {
             filePath = path;
             fileName = name;
+            return this;
+        }
+
+        public FileLoggerBuilder isHidden() {
+            isHidden = true;
             return this;
         }
 
@@ -99,6 +105,7 @@ public class FileLogger extends AndroidLogger {
 
     private void createFile(String fileName) {
         try {
+
 
             _logFile = new File(builder.filePath + fileName);
 
@@ -153,8 +160,16 @@ public class FileLogger extends AndroidLogger {
                     + "Android/uncaught_logger/apps/"
                     + builder.packageName
                     + File.separator;
+
+            if (builder.isHidden)
+                builder.filePath = builder.filePath.replace("uncaught_logger", ".uncaught_logger");
+
+
         } else {
             builder.filePath = dirs;
+            if (builder.isHidden)
+                builder.filePath = builder.filePath.replace(builder.filePath, "."+builder.filePath);
+
         }
 
         createDirs(builder.filePath);

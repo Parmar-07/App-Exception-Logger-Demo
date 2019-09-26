@@ -39,13 +39,33 @@ public class App extends Application {
 
 ```
 
-To produce an auto file logger with by using the  `fileLogger.autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)` method to pass the value of the limitation as a parameter and log file will generate in this path :
+# Logger Features
 
-<b><i>`ExternalStorage/Android/uncaught_logger/apps/<package-name>/Log_yyyy-MM-dd hh:mm:ss:a.txt`</i></b>
+* <b>Console Logger</b>
 
- To produce a custom file path for single file log by using`fileLogger.customGenerateLog("/uncaught_logger/","logger.txt")` method passing the path & filename as a parameters
+Consists of  differents following modes to Logs
 
-<b><i>`ExternalStorage/uncaught_logger/logger.txt`</i></b>
+```java
+
+ConsoleLogger.DEDUG
+ConsoleLogger.ERROR
+ConsoleLogger.INFO
+ConsoleLogger.VERBOSE
+ConsoleLogger.WARNING
+ConsoleLogger.ASSERT
+
+```
+* <b>File Logger</b>
+
+<b>autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)</b> : is used to produce mutiple-file logs, with limitation of file generation and store in following path
+
+`ExternalStorage/Android/uncaught_logger/apps/<package-name>/Log_yyyy-MM-dd hh:mm:ss:a.txt`
+
+<b>customGenerateLog("/uncaught_logger/","logger.txt")</b> : is used to produce single-file logs, and store in following path
+
+`ExternalStorage/uncaught_logger/logger.txt`
+
+<b>isHidden()</b> : is optinal to hide the logs files.
 
 # Implementation
 Download the [@uncaught_logger-release.aar][3] file and copy to the libs folder, libs folder must be added to `project-level.gradle` file
