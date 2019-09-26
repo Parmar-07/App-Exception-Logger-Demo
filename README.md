@@ -102,8 +102,8 @@ implementation(name:'uncaught_logger-release', ext:'aar')
 
 
 
- [0]:https://github.com/Parmar-07/App-Exception-Logger-Demo
- [1]: https://github.com/RohitSurwase/UCE-Handler
+ [0]:https://github.com/Parmar-07/App-Exception-Logger-Demo/tree/master/app/demo/uce_demo.apk
+ [1]:https://github.com/RohitSurwase/UCE-Handler
  [2]:https://github.com/DineshParmar65412369/App-Exception-Logger-Demo/tree/master/uncaught_logger
  [3]:https://github.com/DineshParmar65412369/App-Exception-Logger-Demo/raw/master/uncaught_logger/aar/uncaught_logger-release.aar
 
