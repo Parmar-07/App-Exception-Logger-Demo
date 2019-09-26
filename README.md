@@ -1,4 +1,4 @@
-# App-Exception-Logger-Demo
+# [App-Exception-Logger-Demo][0]
 
 Logging a UncaugthException in a File or Log console.
 
@@ -66,6 +66,14 @@ ConsoleLogger.ASSERT
 `ExternalStorage/uncaught_logger/logger.txt`
 
 <b>isHidden()</b> : is optinal to hide the logs files.
+```java
+
+FileLogger fileLogger = new FileLogger.FileLoggerBuilder()
+                .autoGenerateLog(FileLogger.DEFAULT_MAX_LOG_LIMIT)
+                .isHidden()
+                .build(this.getPackageName());
+
+```
 
 # Implementation
 Download the [@uncaught_logger-release.aar][3] file and copy to the libs folder, libs folder must be added to `project-level.gradle` file
@@ -94,8 +102,9 @@ implementation(name:'uncaught_logger-release', ext:'aar')
 
 
 
-
+ [0]:https://github.com/Parmar-07/App-Exception-Logger-Demo
  [1]: https://github.com/RohitSurwase/UCE-Handler
  [2]:https://github.com/DineshParmar65412369/App-Exception-Logger-Demo/tree/master/uncaught_logger
  [3]:https://github.com/DineshParmar65412369/App-Exception-Logger-Demo/raw/master/uncaught_logger/aar/uncaught_logger-release.aar
+
 
