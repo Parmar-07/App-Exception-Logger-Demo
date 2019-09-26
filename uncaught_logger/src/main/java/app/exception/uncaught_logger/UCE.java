@@ -124,13 +124,17 @@ public class UCE implements UCEBuilder, FileLogger.OnFileError {
 
 
                     _logger.log("Unhandled Exception : ");
-                    _logger.log(Objects.requireNonNull(throwable.getClass().getName()));
+                    _logger.log(throwable.getClass().getName());
 
                     _logger.log("Exception Cause: ");
-                    _logger.log(Objects.requireNonNull(throwable.getCause()).toString());
+                    if (throwable.getCause()!=null){
+                        _logger.log(throwable.getCause().getMessage());
+                    }else{
+                        _logger.log(throwable.getLocalizedMessage());
+                    }
 
                     _logger.log("Exception Message: ");
-                    _logger.log(Objects.requireNonNull(throwable.getMessage()));
+                    _logger.log(throwable.getMessage());
 
                     _logger.log("_____________________________________________");
                     _logger.log("Exception Stacktrace: ");

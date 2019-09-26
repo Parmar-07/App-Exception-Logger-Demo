@@ -150,7 +150,7 @@ public class FileLogger extends AndroidLogger {
 
         if (dirs == null || dirs.isEmpty()) {
             builder.filePath = File.separator
-                    + "Android/data/"
+                    + "Android/uncaught_logger/apps/"
                     + builder.packageName
                     + File.separator
                     + "errorLog"
