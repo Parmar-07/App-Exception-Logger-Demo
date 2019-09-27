@@ -119,11 +119,16 @@ public class FileLogger extends AndroidLogger {
     }
 
     private void deleteRecursive(File fileOrDirectory) {
-        if (fileOrDirectory.isDirectory())
-            for (File child : Objects.requireNonNull(fileOrDirectory.listFiles()))
-                deleteRecursive(child);
+        if (fileOrDirectory.isDirectory()){
+            if (fileOrDirectory.listFiles()!=null){
+                for (File child : fileOrDirectory.listFiles()) {
+                    deleteRecursive(child);
+                }
+            }
+            fileOrDirectory.delete();
+        }
 
-        fileOrDirectory.delete();
+
     }
 
     @SuppressWarnings("deprecation")
